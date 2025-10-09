@@ -1,0 +1,15 @@
+[user]
+    name = "yozhgoor"
+    email = "yozhgoor@outlook.com"
+[core]
+    editor = nvim
+    excludesFiles = ~/.gitignore_global
+[push]
+    autoSetupRemote = true
+[pull]
+    ff = "only";
+    rebase = false
+[fetch]
+    prune = true
+[init]
+    defaultBranch = main
