@@ -111,44 +111,6 @@ require("lazy").setup({
     -- Icons
     { "nvim-tree/nvim-web-devicons", lazy = true },
 
-    -- Treesitter
-    { "nvim-treesitter/nvim-treesitter",
-      lazy = false,
-      build = ":TSUpdate",
-      config = function()
-        require("nvim-treesitter.configs").setup({
-          ensure_installed = {
-            "c",
-            "lua",
-            "vim",
-            "vimdoc",
-            "query",
-            "bash",
-            "comment",
-            "diff",
-            "regex",
-            "gitignore",
-            "html",
-            "markdown",
-            "python",
-            "rust",
-            "javascript",
-            "ron",
-            "toml",
-            "yaml",
-            "xml",
-            "json",
-            "nix",
-            "mermaid",
-          },
-          sync_install = true,
-          auto_install = true,
-          highlight = { enable = true },
-          additional_vim_regex_highlighting = false,
-        })
-      end,
-    },
-
     -- File explorer
     { "nvim-tree/nvim-tree.lua",
       lazy = false,
@@ -220,62 +182,41 @@ require("lazy").setup({
       end,
     },
 
-    { "MeanderingProgrammer/render-markdown.nvim",
-      dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-      ft = "markdown",
+    -- Treesitter
+    { "nvim-treesitter/nvim-treesitter",
+      lazy = false,
+      build = ":TSUpdate",
       config = function()
-        vim.api.nvim_create_autocmd("FileType", {
-          pattern = "markdown",
-          callback = function()
-            vim.opt_local.conceallevel = 2
-            vim.cmd [[
-              highlight RenderMarkdownCode guibg=#181818
-              highlight RenderMarkdownCodeInline guibg=#181818
-            ]]
-          end
-        })
-        require("render-markdown").setup({
-          render_modes = true,
-          heading = {
-            signs = false,
-            width = "block",
-            min_width = 100,
-            position = "inline",
-            backgrounds = {},
+        require("nvim-treesitter.configs").setup({
+          ensure_installed = {
+            "c",
+            "lua",
+            "vim",
+            "vimdoc",
+            "query",
+            "bash",
+            "comment",
+            "diff",
+            "regex",
+            "gitignore",
+            "html",
+            "markdown",
+            "python",
+            "rust",
+            "javascript",
+            "ron",
+            "toml",
+            "yaml",
+            "xml",
+            "json",
+            "nix",
+            "mermaid",
+            "sql",
           },
-          code = {
-            width = "block",
-            min_width = 100,
-          },
-          latex = { enabled = false },
-          dash = { width = 100 },
-        })
-      end,
-    },
-
-    -- LSP config
-    { "neovim/nvim-lspconfig",
-      ft = "rust",
-      config = function()
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          pattern = "rust",
-          callback = function()
-            vim.lsp.buf.format({ timeout_ms = 200 })
-          end,
-        })
-        require("lspconfig").rust_analyzer.setup({
-          settings = {
-            ["rust-analyzer"] = {
-              imports = {
-                granularity = { group = "module" },
-              },
-              checkOnSave = { command = "clippy" },
-              procMacro = { enable = true },
-              inlayHints = {
-                typeHints = { enable = true },
-              },
-            },
-          },
+          sync_install = true,
+          auto_install = true,
+          highlight = { enable = true },
+          additional_vim_regex_highlighting = false,
         })
       end,
     },
