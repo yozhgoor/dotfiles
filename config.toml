@@ -1,0 +1,77 @@
+remote_path = "repos/dotfiles"
+
+# alacritty
+
+[[files]]
+local = ".config/alacritty/alacritty.toml"
+remote = "alacritty/alacritty.toml"
+
+# bash
+
+[[files]]
+local = ".bash_profile"
+remote = "bash/.bash_profile"
+
+[[files]]
+local = ".bashrc"
+remote = "bash/.bashrc"
+
+[[files]]
+local = ".config/starship.toml"
+remote = "bash/starship.toml"
+
+# boot
+
+[[files]]
+local = "/boot/loader/loader.conf"
+remote = "boot/loader.conf"
+
+[[files]]
+local = "/boot/loader/entries/sanctuary.conf"
+remote = "boot/sanctuary.conf"
+
+# dot-manager
+
+[[files]]
+local = ".config/dot-manager/config.toml"
+remote = "config.toml"
+
+# i3
+
+[[files]]
+local = ".config/i3/config"
+remote = "i3/config"
+
+[[files]]
+local = ".config/i3status/config"
+remote = "i3/i3status"
+
+# nvim
+
+[[files]]
+local = ".config/nvim/init.lua"
+remote = "nvim/init.lua"
+
+[[files]]
+local = ".config/nvim/spell/en.utf-8.add"
+remote = "nvim/spell"
+
+# git
+
+[[files]]
+local = ".gitconfig"
+remote = "git/.gitconfig"
+
+[[files]]
+local = ".gitignore_global"
+remote = "git/.gitignore_global"
+
+# xorg
+
+[[files]]
+local = ".xinitrc"
+remote = "xorg/.xinitrc"
+
+[[files]]
+local = ".Xresources"
+remote = "xorg/.Xresources"
